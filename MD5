@@ -1,7 +1,7 @@
-d452b6ac369a3ad76b094f3829b0e228 *DESCRIPTION
+997041f9a57d5e87fa76431c7cd018c8 *DESCRIPTION
 a6892cedb455795fd149dd3531a2747c *LICENSE
 ac25424f6c4bb98b423b639448e4caa0 *NAMESPACE
-2e8916f3b2129fc88d258455341c74ef *NEWS.md
+70b221637aadbd0ece300e050e80fafb *NEWS.md
 c498207e5648cf05792696ed77048340 *R/as-dkan_list.R
 5cb68a5a6ab19b784ed612d1365588f2 *R/as-dkan_node.R
 a01573721bc3d2b07f21175207fddbe1 *R/attach_file_to_node.R
@@ -19,13 +19,13 @@ c90bf3013914e6f3ef88dd12b9f46e76 *R/get_resource_nids.R
 f4fed990b6b035033f6eced9cc78d81a *R/retrieve_node.R
 a5f94b0ac713d030c89b4b42054f6ec6 *R/sysdata.rda
 689c3adcb9b3dadd4036e388f4f82834 *R/update_node.R
-b2bc7e15f4a6e5f9f1dc5c92de574707 *R/utils.R
-643e53e1119e722d3a8096975dc7de81 *README.md
-17a1f073b6ede1376dd11ca145ec047c *build/vignette.rds
+b0a417a3cc64433537b5327017781c9b *R/utils.R
+c2b514b9c7752119f18fc64b8f5a0693 *README.md
+d11d76bf4bdd59a76d1996c5f73c2883 *build/vignette.rds
 5ec8ce2a5fd12b4e419de1b20d3a44ee *inst/NOTICE.md
 87a1f16ec1225f598282079ecdc5466c *inst/doc/getting_started_with_dkanr.R
 4cafb0bf5db6981dc8d1c4a6c241d63b *inst/doc/getting_started_with_dkanr.Rmd
-357631ddb38fe2122cf184263acdd523 *inst/doc/getting_started_with_dkanr.html
+09c5e5e80b348ed53ad6e7164e9fd7f2 *inst/doc/getting_started_with_dkanr.html
 143b8a9df499c33e5019340206ec6c2f *man/attach_file_to_node.Rd
 245875699baebc25465b45363bb9c610 *man/create_node.Rd
 952a5aa3a5ec3f95813fc408f06abc8f *man/delete_node.Rd
@@ -213,8 +213,7 @@ db38bb2549060a2eaf8d1802fc0e849f *tests/testthat/datacatalog.worldbank.org/api/a
 dc2584b4d5d29b7a328e1f3c7aab0abc *tests/testthat/datacatalog.worldbank.org/api/dataset/node/00000.R
 34827a8084b05ad806b5882c590bf427 *tests/testthat/datacatalog.worldbank.org/api/dataset/node/140177.json
 f94337c196d0452e6e00b69f9f0740c8 *tests/testthat/datacatalog.worldbank.org/api/dataset/node/140366.json
-82d26fdd07a0902ffb74878680627205 *tests/testthat/datacatalog.worldbank.org/api/dataset/system/connect-c34ae0-POST.R
-c98ad7b411444b254b3d21d5dfa3fdd8 *tests/testthat/datacatalog.worldbank.org/api/dataset/system/connect-c34ae0-POST.json
+7e21231f7ae3b2f4f5b89831b8611a58 *tests/testthat/datacatalog.worldbank.org/api/dataset/system/connect-c34ae0-POST.json
 14648dd9a71f064c2b58a7eaad5683b4 *tests/testthat/datacatalog.worldbank.org/api/dataset/user/login-5f3e7c-POST.json
 782b5b13f99f83f46b39b46d3cbffd15 *tests/testthat/datacatalog.worldbank.org/api/dataset/user/login-7c0dbb-POST.json
 e3d69c07b6f2c3240ae7eca1c15d8d45 *tests/testthat/datacatalog.worldbank.org/api/dataset/user/login-8b304e-POST.json
@@ -248,7 +247,7 @@ e78617f28a61f838540e2e0d4778d310 *tests/testthat/test-ds_is_available.R
 7720980e70d8176320cfa7e6d6a1475e *tests/testthat/test-ds_search.R
 99cb9688a81455345cc19a0f0fc80b17 *tests/testthat/test-ds_search_all.R
 bb12ad875bb0a2c7cb01b73a475778cc *tests/testthat/test-err_handler.R
-5ccccc740a254d78dc48e9c7f1a04d25 *tests/testthat/test-fix_download_url.R
+8765f69ecc1f051e3634cfde2b9b11ee *tests/testthat/test-fix_download_url.R
 b75445318a4a822b11dd077419a92d2f *tests/testthat/test-get_resource_nids.R
 64c4db5b806ad544165d2db08020371e *tests/testthat/test-get_resource_url.R
 0d559eee0c1c6f32befd001525714b2e *tests/testthat/test-helpers.R
