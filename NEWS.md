@@ -1,3 +1,7 @@
+# dkanr 0.1.3
+
+* Fix attribution in LICENSE file
+
 # dkanr 0.1.2
 
 * Fix mocking issue with connect_system() in test suite

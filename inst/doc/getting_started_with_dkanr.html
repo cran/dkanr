@@ -11,17 +11,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2018-07-12" />
+<meta name="date" content="2019-02-18" />
 
 <title>Getting started with dkanr</title>
 
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -34,13 +34,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,7 +80,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -278,7 +298,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">Getting started with dkanr</h1>
-<h4 class="date"><em>2018-07-12</em></h4>
+<h4 class="date"><em>2019-02-18</em></h4>
 
 
 <div id="TOC">
@@ -316,19 +336,19 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="connection-without-authentication" class="section level2">
 <h2>Connection without authentication</h2>
 <p>To set-up a connection without authentication, you just need the site URL.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(purrr)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(dkanr)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">dkanr_setup</span>(<span class="dt">url =</span> <span class="st">'https://data.louisvilleky.gov'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(purrr)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(dkanr)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">dkanr_setup</span>(<span class="dt">url =</span> <span class="st">&#39;https://data.louisvilleky.gov&#39;</span>)</a></code></pre></div>
 </div>
 <div id="authenticated-connection" class="section level2">
 <h2>Authenticated connection</h2>
 <p>If authentication is required, you will also need to provide a valid username and password.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">dkanr_setup</span>(<span class="dt">url =</span> <span class="st">'http://demo.getdkan.com'</span>,</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">            <span class="dt">username =</span> <span class="st">'my_username'</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">            <span class="dt">password =</span> <span class="st">'my_password'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">dkanr_setup</span>(<span class="dt">url =</span> <span class="st">&#39;http://demo.getdkan.com&#39;</span>,</a>
+<a class="sourceLine" id="cb2-2" title="2">            <span class="dt">username =</span> <span class="st">&#39;my_username&#39;</span>,</a>
+<a class="sourceLine" id="cb2-3" title="3">            <span class="dt">password =</span> <span class="st">&#39;my_password&#39;</span>)</a></code></pre></div>
 <p>You can verify that you are successfully connected by printing your connection information.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">dkanr_settings</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">dkanr_settings</span>()</a></code></pre></div>
 <pre><code>## &lt;dkanr settings&gt;
 ##   Base URL:  https://data.louisvilleky.gov 
 ##   Cookie:  
@@ -338,26 +358,26 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="step-2-list-all-available-datasets-with-list_nodes_all" class="section level1">
 <h1>Step 2: List all available datasets with <code>list_nodes_all()</code></h1>
 <p>While exploring the offerings of a catalog, you can retrieve all the available datasets with a simple query.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Get a list of all datasets</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">resp &lt;-<span class="st"> </span><span class="kw">list_nodes_all</span>(<span class="dt">filters =</span> <span class="kw">c</span>(<span class="dt">type =</span> <span class="st">'dataset'</span>), <span class="dt">as =</span> <span class="st">'df'</span>)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># Print the first 10 datasets</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">resp <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(nid, title, uri) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(title) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="st">  </span><span class="kw">head</span>(<span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Get a list of all datasets</span></a>
+<a class="sourceLine" id="cb5-2" title="2">resp &lt;-<span class="st"> </span><span class="kw">list_nodes_all</span>(<span class="dt">filters =</span> <span class="kw">c</span>(<span class="dt">type =</span> <span class="st">&#39;dataset&#39;</span>), <span class="dt">as =</span> <span class="st">&#39;df&#39;</span>)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co"># Print the first 10 datasets</span></a>
+<a class="sourceLine" id="cb5-4" title="4">resp <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="st">  </span><span class="kw">select</span>(nid, title, uri) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="st">  </span><span class="kw">arrange</span>(title) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="st">  </span><span class="kw">head</span>(<span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 10 x 3
-##    nid   title                             uri                            
-##    &lt;chr&gt; &lt;chr&gt;                             &lt;chr&gt;                          
-##  1 8076  311 Service Requests              https://data.louisvilleky.gov/~
-##  2 4526  ABC License Data                  https://data.louisvilleky.gov/~
-##  3 4926  ALL Checks                        https://data.louisvilleky.gov/~
-##  4 2686  Abandoned Urban Property          https://data.louisvilleky.gov/~
-##  5 5566  Absenteeism                       https://data.louisvilleky.gov/~
-##  6 2781  Account Breakdown by Program Area https://data.louisvilleky.gov/~
-##  7 2166  Active Contractors                https://data.louisvilleky.gov/~
-##  8 8216  Active Permits                    https://data.louisvilleky.gov/~
-##  9 4496  Aerial Photogrids                 https://data.louisvilleky.gov/~
-## 10 5296  Air Emission Sources              https://data.louisvilleky.gov/~</code></pre>
+##    nid   title                      uri                                    
+##    &lt;chr&gt; &lt;chr&gt;                      &lt;chr&gt;                                  
+##  1 8076  311 Service Requests       https://data.louisvilleky.gov/api/data~
+##  2 4526  ABC License Data           https://data.louisvilleky.gov/api/data~
+##  3 4926  ALL Checks                 https://data.louisvilleky.gov/api/data~
+##  4 2686  Abandoned Urban Property   https://data.louisvilleky.gov/api/data~
+##  5 5566  Absenteeism                https://data.louisvilleky.gov/api/data~
+##  6 2781  Account Breakdown by Prog~ https://data.louisvilleky.gov/api/data~
+##  7 2166  Active Contractors         https://data.louisvilleky.gov/api/data~
+##  8 8216  Active Permits             https://data.louisvilleky.gov/api/data~
+##  9 4496  Aerial Photogrids          https://data.louisvilleky.gov/api/data~
+## 10 5296  Air Emission Sources       https://data.louisvilleky.gov/api/data~</code></pre>
 </div>
 <div id="step-3-access-metadata-for-a-specific-dataset-node" class="section level1">
 <h1>Step 3: Access metadata for a specific dataset node</h1>
@@ -369,26 +389,26 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </ol>
 <div id="identify-the-dataset-node-id" class="section level2">
 <h2>Identify the dataset node ID</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Print only the &quot;Active Permits&quot; dataset information</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">resp <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(title <span class="op">==</span><span class="st"> 'Active Permits'</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(nid, title, uri, type)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Print only the &quot;Active Permits&quot; dataset information</span></a>
+<a class="sourceLine" id="cb7-2" title="2">resp <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="st">  </span><span class="kw">filter</span>(title <span class="op">==</span><span class="st"> &#39;Active Permits&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="st">  </span><span class="kw">select</span>(nid, title, uri, type)</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 4
-##   nid   title          uri                                          type  
-##   &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;                                        &lt;chr&gt; 
-## 1 8216  Active Permits https://data.louisvilleky.gov/api/dataset/n~ datas~</code></pre>
+##   nid   title         uri                                            type  
+##   &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;                                          &lt;chr&gt; 
+## 1 8216  Active Permi~ https://data.louisvilleky.gov/api/dataset/nod~ datas~</code></pre>
 </div>
 <div id="use-the-node-id-to-retrieve-the-dataset-metadata" class="section level2">
 <h2>Use the node ID to retrieve the dataset metadata</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">metadata &lt;-<span class="st"> </span><span class="kw">retrieve_node</span>(<span class="dt">nid =</span><span class="st">'8216'</span>, <span class="dt">as =</span> <span class="st">'list'</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">metadata</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">metadata &lt;-<span class="st"> </span><span class="kw">retrieve_node</span>(<span class="dt">nid =</span><span class="st">&#39;8216&#39;</span>, <span class="dt">as =</span> <span class="st">&#39;list&#39;</span>)</a>
+<a class="sourceLine" id="cb9-2" title="2">metadata</a></code></pre></div>
 <pre><code>## &lt;DKAN Node&gt; #8216 
 ##   Type: dataset
 ##   Title: Active Permits
 ##   UUID: 7e83b96e-3b53-4fc5-9a4c-32af30571787
 ##   Created/Modified: 1467293251 / 1520511325</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># All metadata fields</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">names</span>(metadata)[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># All metadata fields</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="kw">names</span>(metadata)[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>]</a></code></pre></div>
 <pre><code>##  [1] &quot;vid&quot;                       &quot;uid&quot;                      
 ##  [3] &quot;title&quot;                     &quot;log&quot;                      
 ##  [5] &quot;status&quot;                    &quot;comment&quot;                  
@@ -404,8 +424,8 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 ## [25] &quot;field_data_dictionary&quot;     &quot;field_frequency&quot;          
 ## [27] &quot;field_granularity&quot;         &quot;field_license&quot;            
 ## [29] &quot;field_public_access_level&quot; &quot;field_related_content&quot;</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Access specific metadata fields</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">metadata<span class="op">$</span>title</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Access specific metadata fields</span></a>
+<a class="sourceLine" id="cb13-2" title="2">metadata<span class="op">$</span>title</a></code></pre></div>
 <pre><code>## [1] &quot;Active Permits&quot;</code></pre>
 </div>
 </div>
@@ -413,11 +433,11 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h1>Step 4: Access data for a specific resource node</h1>
 <p>Once you have identified a dataset of interest, you will probably want to download actual data. Multiple data files and documents may be attached to a single dataset, so you’ll first need to list all the resources (data files, and other type of documents) that are linked to the dataset you are interested in.</p>
 <p>Here, a single resource is attached to the “Active Permits” dataset</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">get_resource_nids</span>(metadata)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">get_resource_nids</span>(metadata)</a></code></pre></div>
 <pre><code>## [1] &quot;8221&quot;</code></pre>
 <p>You can then use the resource <strong>node ID</strong> to retrieve its metadata.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">metadata_rs &lt;-<span class="st"> </span><span class="kw">retrieve_node</span>(<span class="dt">nid =</span><span class="st">'8221'</span>, <span class="dt">as =</span> <span class="st">'list'</span>)</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">metadata_rs</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">metadata_rs &lt;-<span class="st"> </span><span class="kw">retrieve_node</span>(<span class="dt">nid =</span><span class="st">&#39;8221&#39;</span>, <span class="dt">as =</span> <span class="st">&#39;list&#39;</span>)</a>
+<a class="sourceLine" id="cb17-2" title="2">metadata_rs</a></code></pre></div>
 <pre><code>## &lt;DKAN Node&gt; #8221 
 ##   Type: resource
 ##   Title: Active Permits
@@ -431,18 +451,18 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="batch-download" class="section level2">
 <h2>Batch download</h2>
 <p>Retrieve the resource URL from the resource metadata</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">get_resource_url</span>(metadata_rs)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">get_resource_url</span>(metadata_rs)</a></code></pre></div>
 <pre><code>## [1] &quot;https://data.louisvilleky.gov/sites//default//files//ActivePermits_7.csv&quot;</code></pre>
 </div>
 <div id="api-call" class="section level2">
 <h2>API call</h2>
 <p>Some data files may be directly queried through the API. Only data files that have been imported into the DKAN datastore can be queried through the API.</p>
 <p>First, you’ll need to check if the data file you are interested in is available from the DKAN datastore</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">ds_is_available</span>(metadata_rs)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">ds_is_available</span>(metadata_rs)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>If this is the case, you’ll be able to retrieve data directly from the datastore. In order to do so, you’ll have to use the resource UUID (Just another unique ID number)</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">ds_search_all</span>(<span class="dt">resource_id =</span> metadata_rs<span class="op">$</span>uuid, <span class="dt">as =</span> <span class="st">'df'</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(PERMITNUMBER, PERMITTYPE, STATUS, SQUAREFEET)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">ds_search_all</span>(<span class="dt">resource_id =</span> metadata_rs<span class="op">$</span>uuid, <span class="dt">as =</span> <span class="st">&#39;df&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="st">  </span><span class="kw">select</span>(PERMITNUMBER, PERMITTYPE, STATUS, SQUAREFEET)</a></code></pre></div>
 <pre><code>## # A tibble: 100 x 4
 ##    PERMITNUMBER PERMITTYPE      STATUS SQUAREFEET
 ##    &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;     
